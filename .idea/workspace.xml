@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="958680bb-543b-463d-9540-58509e867fda" name="Changes" comment="hw1_1 and hw1_2" />
+    <list default="true" id="34d69aba-8988-4061-b18f-e2d0a8df9944" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -89,6 +93,7 @@
         <item itemvalue="Python.hw1_1" />
         <item itemvalue="Python.hw1_1" />
         <item itemvalue="Python.hw1_1" />
+        <item itemvalue="Python.hw1_1" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647504931568</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test1">
+      <created>1647524538797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647524538797</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +168,7 @@
     <MESSAGE value="main not" />
     <MESSAGE value="clw not" />
     <MESSAGE value="hw1_1 and hw1_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw1_1 and hw1_2" />
+    <MESSAGE value="test1" />
+    <option name="LAST_COMMIT_MESSAGE" value="test1" />
   </component>
 </project>
