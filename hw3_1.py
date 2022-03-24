@@ -22,9 +22,4 @@ def f():
     return input('? ')
 
 
-f()
-f()
-f()
-f()
-f()
-f()
+
