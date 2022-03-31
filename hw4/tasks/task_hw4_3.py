@@ -26,6 +26,6 @@ import sys
 
 def my_precious_logger(text: str):
     if text.startswith("error"):
-        sys.stderr.write(text)
+        sys.stderr.write(text) #if the string starts with "error", then we write it to the standard error descriptor
     else:
-        sys.stdout.write(text)
+        sys.stdout.write(text) #otherwise, we write to the standard output descriptor
