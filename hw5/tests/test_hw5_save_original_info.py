@@ -1,6 +1,13 @@
 from hw5.tasks.task_hw5_save_original_info import decorator_info
 
 
+"""
+Checking the correct operation of the decorator, which saves information from
+the original function (__name__ and __doc__) and saves the
+original function itself in the __original_func attribute
+"""
+
+
 def test_decorator_info():
     def func_is(func):
         @decorator_info(original_func=func)
