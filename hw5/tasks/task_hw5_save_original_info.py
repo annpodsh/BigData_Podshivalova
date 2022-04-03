@@ -25,7 +25,7 @@ original function itself in the __original_func attribute
 """
 
 def decorator_info(original_func):
-    def decorator(func):
+    def func_is(func):
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
             return result
@@ -34,8 +34,7 @@ def decorator_info(original_func):
         wrapper.__doc__ = original_func.__doc__
         wrapper.__name__ = original_func.__name__
         return wrapper
-
-    return decorator
+    return func_is
 
 
 def print_result(func):
