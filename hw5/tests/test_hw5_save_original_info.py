@@ -1,4 +1,5 @@
-from hw5.tasks.task_hw5_save_original_info import decorator_info
+from BigData_Podshivalova.hw5.tasks.task_hw5_save_original_info import custom_sum
+import pytest
 
 
 """
@@ -8,23 +9,20 @@ original function itself in the __original_func attribute
 """
 
 
-def test_decorator_info():
-    def func_is(func):
-        @decorator_info(original_func=func)
-        def wrapper(*args, **kwargs):
-            """
-            Wrong example of decorator_info __doc__
-            """
-            return False
+@pytest.mark.parametrize("a, b, c, expected_result", [(1, 10, 100, 111),
+                                                      ([1, 2], [9, 3, 8], [5, 4, 7], [1, 2, 3, 4, 5, 7, 8, 9]),
+                                                      ('Hello,', 'me dear', 'friend!', 'Hello, my dear friend!')])
+def test_custom_sum(a, b, c, expected_result):
+    assert custom_sum(a, b, c) == expected_result
 
-        return wrapper
-    return func_is
 
-    @func_is
-    def correct_func(*args) -> bool:
-        """Decorator_info with correct name __doc__"""
-        return True
+def test_custom_sum_name():
+    assert custom_sum.__name__ == 'custom_sum'
 
-    assert correct_func.__original_func()
-    assert correct_func.__name__ == "correct_func"
-    assert correct_func.__doc__ == "Example of decorator_info with correct name __doc__"
+
+def test_custom_sum_doc():
+    assert custom_sum.__doc__ == 'This function can sum any objects which have __add___'
+
+
+def test_custom_sum_orig_func():
+    assert str(custom_sum.__original_func)[:20] == '<function custom_sum'
