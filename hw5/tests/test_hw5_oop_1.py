@@ -16,15 +16,11 @@ def test_homework():
 
 
 # checking the functionality of the function that checks the status of the task relative to the deadline:
-# there is time before the deadline
+# hw1 - there is time before the deadline
+# hw2 - the deadline has passed
 
-def succes_test_homework():
+def test_homework():
     assert hw1.is_active()
-
-
-# health check of the function that checks the status of the task relative to the deadline: the deadline has passed
-
-def unsucces_test_homework():
     assert not hw2.is_active()
 
 
@@ -35,17 +31,14 @@ def test_student():
     assert student.last_name == "Leonid"
 
 
-# checking the functionality of the function that checks the success of the task: managed in time
+# checking the functionality of the function that checks the success of the task:
+# hw1 - managed in time
+# hw2 - did not have time in time
 
-def test_student_homework_in_time():
+def test_student_homework():
     do_homework = stud.do_homework(hw1)
-    assert do_homework == hw1
-
-
-# checking the functionality of the function that checks the success of the task: did not have time in time
-
-def test_student_homework_late():
     do_homework = stud.do_homework(hw2)
+    assert do_homework == hw1
     assert do_homework == hw2
 
 
