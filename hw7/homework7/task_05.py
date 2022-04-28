@@ -18,5 +18,15 @@ from pathlib import Path
 from typing import List, Union, Iterator
 
 
+# read the data from the file in int format and write it to the sheet
+
 def merge_sorted_files(file_list: List[Union[Path, str], ...]) -> Iterator:
-    pass
+    numb_list = []
+    for file_name in file_list:
+        with open(file_name) as file:
+            numb_list += [int(x) for x in file.read().strip().split()]
+
+# sort the sheet and iterate it at the output
+    
+    numb_list.sort()
+    return iter(numb_list)
