@@ -11,8 +11,10 @@ file2.txt:
 4
 6
 
->>> list(merge_sorted_files(["file1.txt", "file2.txt"]))
+>>> a = list(merge_sorted_files(["file1.txt", "file2.txt"]))
 [1, 2, 3, 4, 5, 6]
+>>> type(a)
+<class 'list_iterator'>
 """
 from pathlib import Path
 from typing import List, Union, Iterator
@@ -30,3 +32,7 @@ def merge_sorted_files(file_list: List[Union[Path, str], ...]) -> Iterator:
     
     numb_list.sort()
     return iter(numb_list)
+
+
+if __name__ == "__main__":
+    import doctest

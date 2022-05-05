@@ -18,6 +18,15 @@ Example:
 
      Return value should be "x wins!"
 
+>>> line1 = [['o', 'x', 'o'],['x', 'o', 'o'],['o', 'x', '0']]
+>>> print(tic_tac_toe_checker(line1))
+o wins!
+>>> line2 = [['x', 'o', 'x'],['o', 'x', 'o'],['o', 'x', 'o']]
+>>> print(tic_tac_toe_checker(line2))
+unfinished!
+>>> line3 = [['0', '-', 'o'],['-', 'x', 'o'],['x', 'o', '-']]
+>>> print(tic_tac_toe_checker(line3))
+draw!
 """
 from typing import List
 import itertools
@@ -49,3 +58,7 @@ def tic_tac_toe_checker(board: List[List]) -> str:
         return "unfinished"
     else:
         return "draw"
+
+
+if __name__ == '__main__':
+    import doctest

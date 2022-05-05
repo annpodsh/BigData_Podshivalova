@@ -3,11 +3,12 @@ Write a function that takes directory path, a file extension and an optional tok
 It will count lines in all files with that extension if there are no tokenizer.
 If a the tokenizer is not none, it will count tokens.
 
-For dir with two files from hw1.py:
+For dir with two files from task_05.py:
+>>> test_dir = Path("C:\", "Users", "MyNotebook", "PycharmProjects", "BigData_Podshivalova", "hw7")
 >>> universal_file_counter(test_dir, "txt")
-6
+12
 >>> universal_file_counter(test_dir, "txt", str.split)
-6
+12
 
 """
 from pathlib import Path
@@ -21,15 +22,19 @@ import os
 def universal_file_counter(
     dir_path: Path, file_extension: str, tokenizer: Optional[Callable] = None
 ) -> int:
-    if tokenizer is None:
-        file_to_pars = []
-        line_count = 0
-        for file_name in os.listdir(dir_path):
-            if file_name.strip().split('.')[1] == file_extension:
-                file_to_pars += [file_name]
+    file_to_pars = []
+    line_count = 0
+    for file_name in os.listdir(dir_path):
+        if file_name.strip().split('.')[1] == file_extension:
+            file_to_pars += [file_name]
         for file_ in file_to_pars:
             with open(file_) as file:
-                line_count += len(file.readlines())
-        print(line_count)
-    if tokenizer is not None:
-        pass
+                if tokenizer is None:
+                    line_count += len(file.readlines())
+                else:
+                    line_count += len(tokenizer('\n'.join(file.readlines())))
+    return line_count
+
+
+if __name__ == '__main__':
+    import doctest

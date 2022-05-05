@@ -1,5 +1,7 @@
 # create a dictionary with access by attributes:  read the data with a sign separation '='
 # and checking for the contents of the digits
+
+
 class KeyValueStorage:
     def __init__(self, file_path: str):
         with open(file_path) as file:
@@ -13,6 +15,7 @@ class KeyValueStorage:
             self.song = self.attr_dict["song"]
 
 # when a value cannot be assigned to an attribute, Value Error is raised
+
     def __getitem__(self, item):
         try:
             __item = self.attr_dict[item]
